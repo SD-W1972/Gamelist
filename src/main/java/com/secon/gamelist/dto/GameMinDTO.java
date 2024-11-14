@@ -1,6 +1,7 @@
 package com.secon.gamelist.dto;
 
 import com.secon.gamelist.entities.Game;
+import com.secon.gamelist.projections.GameMinProjection;
 
 public class GameMinDTO {
 	
@@ -23,6 +24,16 @@ public class GameMinDTO {
 		shortDescription = entity.getShortDescription();
 	}
 
+	public GameMinDTO(GameMinProjection projection) {
+		
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
+	}
+
+	
 	public Long getId() {
 		return id;
 	}
